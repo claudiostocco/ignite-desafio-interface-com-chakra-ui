@@ -1,10 +1,15 @@
 import { Box, Divider, Flex, Image, Img, Link as ChakraLink, Stack, Text } from "@chakra-ui/react";
 import Link from 'next/link';
 
+import db from '../../continents.json';
+
 import { Container } from "../components/Container";
 import { Header } from "../components/Header";
+import { Slider } from "../components/Slider";
 
 export default function Home() {
+  const continents = db.continents;
+
   return (
     <Box>
       <Header />
@@ -64,24 +69,23 @@ export default function Home() {
           justify="center"
         >
           <Text
-            fontSize="1.725rem"
+            fontSize="2rem"
             fontWeight="500"
             fontStyle="normal"
             lineHeight="3rem"
             textAlign="center"
+            my="3.75rem"
           >
             Vamos nessa? <br />
             Então escolha seu continente
           </Text>
         </Flex>
+        <Slider continents={continents}/>
         <Flex
           w="100%"
+          align="center"
+          justify="center"
         >
-          <Link href="/europe" passHref>
-            <ChakraLink as="a">
-              Europa
-            </ChakraLink>
-          </Link>
         </Flex>
       </Container>
     </Box>
