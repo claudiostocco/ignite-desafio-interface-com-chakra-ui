@@ -17,8 +17,7 @@ export default function ShowContinent({ continent }: ShowContinentPops) {
         <Box>
             <Header isCountry />
             <Container>
-                <h1>EEEE</h1>
-                {/* <Box
+                <Box
                     w="100%"
                     h={500}
                     bgImage={continent.image || ''}
@@ -32,7 +31,7 @@ export default function ShowContinent({ continent }: ShowContinentPops) {
                     >
                         {continent.name}
                     </Text>
-                </Box> */}
+                </Box>
 
             </Container>
         </Box>
@@ -48,10 +47,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const id = params.continent;
-    console.log(id);
     const continent = db.continents.filter(value => value.id === id)?.[0] || {} as Continent;
-    console.log(continent);
     return {
-        props: continent
+        props: {
+            continent
+        },
+        revalidate: 30 * 60 // 30 minutes
     }
 }
