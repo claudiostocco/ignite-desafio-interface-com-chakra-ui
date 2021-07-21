@@ -1,6 +1,7 @@
 export type Continent = {
     id: string
     name: string
+    description: string
     comment: string
     image: string
     countries: number

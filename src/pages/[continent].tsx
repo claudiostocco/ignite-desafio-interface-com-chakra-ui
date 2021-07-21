@@ -1,9 +1,13 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 import db from '../../continents.json';
 
 import { Container } from "../components/Container";
+import { Banner } from "../components/ContinentContent/Banner";
+import { Bio } from "../components/ContinentContent/Bio";
+import { Cities100 } from "../components/ContinentContent/Cities100";
+import { Info } from "../components/ContinentContent/Info";
 import { Header } from "../components/Header";
 import { Continent } from "../utils/types";
 
@@ -17,22 +21,20 @@ export default function ShowContinent({ continent }: ShowContinentPops) {
         <Box>
             <Header isCountry />
             <Container>
-                <Box
-                    w="100%"
-                    h={500}
-                    bgImage={continent.image || ''}
-                >
-                    <Text
-                        fontSize="2.5rem"
-                        fontWeight="600"
-                        color="gray.50"
-                        fontStyle="normal"
-                        lineHeight="4rem"
+                <Banner name={continent.name} image={continent.image} />
+                <Flex w="100%" justify="center" >
+                    <Flex
+                        w={1160}
+                        align="center"
+                        justify="space-around"
+                        gap="16"
+                        py="36"
                     >
-                        {continent.name}
-                    </Text>
-                </Box>
-
+                        <Bio description={continent.description} />
+                        <Info countries={continent.countries} languages={continent.languages} citiesIn100={continent.citiesIn100.length} />
+                    </Flex>
+                </Flex>
+                <Cities100 />
             </Container>
         </Box>
     )
