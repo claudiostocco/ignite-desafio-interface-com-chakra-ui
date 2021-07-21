@@ -1,3 +1,10 @@
+export type CitiesIn100 = {
+    name: string
+    country: string
+    flag: string
+    image: string
+}
+
 export type Continent = {
     id: string
     name: string
@@ -6,10 +13,5 @@ export type Continent = {
     image: string
     countries: number
     languages: number
-    citiesIn100: {
-        name: string
-        country: string
-        flag: string
-        image: string
-    }[]
+    citiesIn100: CitiesIn100[]
 }

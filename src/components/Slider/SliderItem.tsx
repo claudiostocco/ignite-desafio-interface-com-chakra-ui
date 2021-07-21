@@ -12,15 +12,15 @@ export const SliderItem = ({ continent }: SliderItemProps) => {
         <Link href={`/${continent.id}`} passHref>
             <ChakraLink as="a">
                 <Box
-                    w={1240}
-                    h={450}
+                    w={[375,1240]}
+                    h={[250,450]}
                     bgImage={continent.image}
                     filter="brightness(0.8)"
                 >
                     <Flex align="center" justify="center" h="100%">
                         <Stack>
                             <Text
-                                fontSize="3rem"
+                                fontSize={["1.5rem", "3rem"]}
                                 fontWeight="700"
                                 fontStyle="normal"
                                 lineHeight="4.5rem"
@@ -30,7 +30,7 @@ export const SliderItem = ({ continent }: SliderItemProps) => {
                                 {continent.name}
                             </Text>
                             <Text
-                                fontSize="1.5rem"
+                                fontSize={["1rem", "1.5rem"]}
                                 fontWeight="700"
                                 fontStyle="normal"
                                 lineHeight="2.125rem"

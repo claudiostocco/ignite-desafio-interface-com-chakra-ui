@@ -15,8 +15,8 @@ interface SliderProps {
 export const Slider = ({ continents }: SliderProps) => {
     return (
         <Flex
-            h={450}
-            w={1240}
+            h={[250,450]}
+            w={[375,1240]}
             align="center"
             justify="center"
         >

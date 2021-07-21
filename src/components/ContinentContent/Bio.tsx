@@ -7,12 +7,12 @@ interface BioProps {
 export function Bio({ description }: BioProps) {
     return (
         <Text
-            w={600}
-            fontSize="1.5rem"
+            w={[375, 600]}
+            fontSize={["1rem", "1.5rem"]}
             fontWeight="400"
             color="gray.600"
             fontStyle="normal"
-            lineHeight="9"
+            lineHeight={["5", "9"]}
         >
             {description}
         </Text>

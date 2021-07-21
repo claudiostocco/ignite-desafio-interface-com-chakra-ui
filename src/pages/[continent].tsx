@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 import db from '../../continents.json';
@@ -23,7 +23,16 @@ export default function ShowContinent({ continent }: ShowContinentPops) {
             <Container>
                 <Banner name={continent.name} image={continent.image} />
                 <Flex w="100%" justify="center" >
-                    <Flex
+                    <SimpleGrid
+                        w={1160}
+                        minChildWidth="480px"
+                        spacing="16"
+                        py="36"
+                        >
+                        <Bio description={continent.description} />
+                        <Info countries={continent.countries} languages={continent.languages} citiesIn100={continent.citiesIn100.length} />
+                    </SimpleGrid>
+                    {/* <Flex
                         w={1160}
                         align="center"
                         justify="space-around"
@@ -32,9 +41,9 @@ export default function ShowContinent({ continent }: ShowContinentPops) {
                     >
                         <Bio description={continent.description} />
                         <Info countries={continent.countries} languages={continent.languages} citiesIn100={continent.citiesIn100.length} />
-                    </Flex>
+                    </Flex> */}
                 </Flex>
-                <Cities100 />
+                <Cities100 citiesIn100={continent.citiesIn100} />
             </Container>
         </Box>
     )

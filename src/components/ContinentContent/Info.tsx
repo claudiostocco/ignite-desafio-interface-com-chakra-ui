@@ -8,10 +8,10 @@ interface InfoProps {
 
 export function Info({ countries, languages, citiesIn100 }: InfoProps) {
     return (
-        <HStack spacing="12" w={500} justify="center">
+        <HStack spacing={["6", "12"]} w={[375, 500]} justify="center">
             <Box textAlign="center">
                 <Text
-                    fontSize="3rem"
+                    fontSize={["1.5rem", "3rem"]}
                     fontWeight="600"
                     color="yellow.500"
                     fontStyle="normal"
@@ -19,18 +19,18 @@ export function Info({ countries, languages, citiesIn100 }: InfoProps) {
                     {countries}
                 </Text>
                 <Text
-                    fontSize="1.5rem"
+                    fontSize={["1rem", "1.5rem"]}
                     fontWeight="600"
                     color="gray.600"
                     fontStyle="normal"
-                    lineHeight="9"
+                    lineHeight={["5", "9"]}
                 >
                     países
                 </Text>
             </Box>
             <Box textAlign="center">
                 <Text
-                    fontSize="3rem"
+                    fontSize={["1.5rem", "3rem"]}
                     fontWeight="600"
                     color="yellow.500"
                     fontStyle="normal"
@@ -38,18 +38,18 @@ export function Info({ countries, languages, citiesIn100 }: InfoProps) {
                     {languages}
                 </Text>
                 <Text
-                    fontSize="1.5rem"
+                    fontSize={["1rem", "1.5rem"]}
                     fontWeight="600"
                     color="gray.600"
                     fontStyle="normal"
-                    lineHeight="9"
+                    lineHeight={["5", "9"]}
                 >
                     linguas
                 </Text>
             </Box>
             <Box textAlign="center">
                 <Text
-                    fontSize="3rem"
+                    fontSize={["1.5rem", "3rem"]}
                     fontWeight="600"
                     color="yellow.500"
                     fontStyle="normal"
@@ -57,11 +57,11 @@ export function Info({ countries, languages, citiesIn100 }: InfoProps) {
                     {citiesIn100}
                 </Text>
                 <Text
-                    fontSize="1.5rem"
+                    fontSize={["1rem", "1.5rem"]}
                     fontWeight="600"
                     color="gray.600"
                     fontStyle="normal"
-                    lineHeight="9"
+                    lineHeight={["5", "9"]}
                 >
                     cidades +100
                 </Text>
